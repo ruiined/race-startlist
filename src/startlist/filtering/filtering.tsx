@@ -21,8 +21,13 @@ export const Filtering = ({
   ].filter((e) => e);
 
   const organisers = [
-    ...new Set(entries.map((entry: EntryInterface) => entry.organiserTitle)),
-  ];
+    ...new Set(
+      entries.map((entry: EntryInterface) => {
+        if (!filters.eventTitle || entry.eventTitle === filters.eventTitle)
+          return entry.organiserTitle;
+      })
+    ),
+  ].filter((e) => e);
 
   return (
     <div id="filtering">

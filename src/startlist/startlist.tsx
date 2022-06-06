@@ -73,7 +73,8 @@ const Startlist = () => {
 
   return (
     <div>
-      <h2>All events</h2>
+      <h2>{filters.eventTitle ? filters.eventTitle : "All Events"}</h2>
+      {filters.organiserTitle && <h3>Organised by {filters.organiserTitle}</h3>}
       <Sorting
         sort={sort}
         handleSort={handleSort}
