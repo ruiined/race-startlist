@@ -3,6 +3,7 @@ import axios from "axios";
 
 const Startlist = () => {
   const [entries, setEntries] = useState<any[]>([]);
+  const [error, setError] = useState<string>("");
 
   const loadEntries = () => {
     axios
@@ -10,7 +11,7 @@ const Startlist = () => {
       .then((res) => {
         setEntries(res.data);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error.message));
   };
 
   useEffect(() => {
@@ -18,13 +19,14 @@ const Startlist = () => {
   }, []);
 
   if (!entries) return <h2>No entries</h2>;
-  
+  if (error) return <h2>{error}</h2>;
+
   return (
     <div>
-      <h2>Startlist</h2>
+      <h2>All events</h2>
       <div>
-        {entries.map((entry) => (
-          <div>
+        {entries.map((entry, i) => (
+          <div key={i}>
             <p>Status: {entry.status}</p>
             <p>
               {entry.firstName} {entry.firstName}
