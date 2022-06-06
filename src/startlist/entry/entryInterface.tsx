@@ -4,6 +4,7 @@ export declare interface EntryInterface {
     firstName: string;
     lastName: string;
     eventTitle: string;
+    emailAddress: string;
     raceStartDate: string;
     raceTitle: string;
     organiserTitle: string;
