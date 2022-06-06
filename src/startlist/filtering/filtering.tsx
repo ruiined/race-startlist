@@ -8,23 +8,24 @@ export const Filtering = ({
   handleFilter,
   clearFilters,
 }: FilteringInterface) => {
-  const events = !Object.keys(filters).length
-    ? [...new Set(entries.map((entry: EntryInterface) => entry.eventTitle))]
-    : [
-        ...new Set(
-          // eslint-disable-next-line array-callback-return
-          entries.map((entry: EntryInterface) => {
-            if (entry.organiserTitle === filters.organiserTitle)
-              return entry.eventTitle;
-          })
-        ),
-      ];
+  const events = [
+    ...new Set(
+      entries.map((entry: EntryInterface) => {
+        if (
+          !filters.organiserTitle ||
+          entry.organiserTitle === filters.organiserTitle
+        )
+          return entry.eventTitle;
+      })
+    ),
+  ].filter((e) => e);
 
   const organisers = [
     ...new Set(entries.map((entry: EntryInterface) => entry.organiserTitle)),
   ];
+
   return (
-    <>
+    <div id="filtering">
       <select
         value={filters.organiserTitle || "all"}
         onChange={handleFilter}
@@ -56,6 +57,6 @@ export const Filtering = ({
         ))}
       </select>
       <button onClick={clearFilters}>Reset filters</button>
-    </>
+    </div>
   );
 };
