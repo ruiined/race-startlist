@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import moment from "moment";
-import { EntryInterface } from "./entryInterface";
+import { EntriesInterface } from "./entryInterface";
 import { currency } from "../../lib/currency";
 
-export const Entry = ({ entry }: EntryInterface) => {
+export const Entry = ({ entry }: EntriesInterface) => {
   const [fullView, setFullView] = useState<boolean>(false);
 
   const handleView = () => {
