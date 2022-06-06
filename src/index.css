@@ -65,6 +65,7 @@ button {
   color: rgb(75, 75, 75);
   border-radius: 4px;
   cursor: pointer;
+  height: 35px;
 }
 
 button:hover {
@@ -81,6 +82,7 @@ select {
   margin: 5px 10px 0 0;
   cursor: pointer;
   width: 150px;
+  height: 35px;
 }
 
 #detailed-entry,
@@ -129,4 +131,11 @@ select {
   margin: 15px 0 35px 0;
   padding: 20px 40px;
   color: rgb(61, 61, 61);
+}
+
+@media print {
+  #filtering,
+  #sorting {
+    display: none;
+  }
 }

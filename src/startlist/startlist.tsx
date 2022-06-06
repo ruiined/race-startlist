@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import { useReactToPrint } from "react-to-print";
 import { Entry } from "./entry/entry";
 import { Sorting } from "./sorting/sorting";
 import { Filtering } from "./filtering/filtering";
@@ -67,12 +68,18 @@ const Startlist = () => {
       ? entries
       : sortEntries(filterEntries);
 
+  const printRef = useRef<HTMLDivElement>(null);
+
+  const handlePrint = useReactToPrint({
+    content: () => printRef.current,
+  });
+
   if (!entries) return <h2>No entries</h2>;
 
   if (error) return <h2>{error}</h2>;
 
   return (
-    <div>
+    <div ref={printRef}>
       <h2>{filters.eventTitle ? filters.eventTitle : "All Events"}</h2>
       {filters.organiserTitle && <h3>Organised by {filters.organiserTitle}</h3>}
       <Sorting
@@ -82,12 +89,14 @@ const Startlist = () => {
         order={order}
         clearSort={clearSort}
       />
+      <div id="filtering">
+      <button aria-label="print" onClick={handlePrint}>🖨️</button>
       <Filtering
         entries={entries}
         filters={filters}
         handleFilter={handleFilter}
         clearFilters={clearFilters}
-      />
+      /></div>
       <Stats entries={filteredAndSorted} />
       <div>
         {filteredAndSorted.map((entry, i) => (

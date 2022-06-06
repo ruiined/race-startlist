@@ -23,7 +23,7 @@ export const Filtering = ({
   const events = filterOptions("eventTitle", "organiserTitle");
 
   return (
-    <div id="filtering">
+    <>
       <select
         value={filters.organiserTitle || "all"}
         onChange={handleFilter}
@@ -57,6 +57,6 @@ export const Filtering = ({
       <button aria-label="reset filters" onClick={clearFilters}>
         Reset
       </button>
-    </div>
+    </>
   );
 };
