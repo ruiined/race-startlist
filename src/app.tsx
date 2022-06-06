@@ -1,7 +1,7 @@
 import React from "react";
 import Startlist from "./startlist/startlist"
 
-function App() {
+const App = () => {
   return (
     <div>
       <header>
