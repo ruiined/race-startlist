@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 import { EntryInterface } from "./entryInterface";
+import { currency } from "../../lib/currency";
 
 export const Entry = ({ entry }: EntryInterface) => {
   const [fullView, setFullView] = useState<boolean>(false);
@@ -9,16 +10,16 @@ export const Entry = ({ entry }: EntryInterface) => {
     fullView ? setFullView(false) : setFullView(true);
   };
   return (
-    <div onClick={handleClick}>
-      <div id="min-entry">
+    <div>
+      <div id="min-entry" onClick={handleClick}>
         <span>{entry.status}</span>
         <span>
           {entry.firstName} {entry.lastName}
         </span>
         <span className="email">{entry.emailAddress}</span>
         <span>
-          {entry.ticketTitle} ({entry.ticketPrice.value}
-          {entry.ticketPrice.currencyCode})
+          {currency.format(entry.ticketPrice.value)}{" "}
+          <span className="email">({entry.ticketTitle})</span>
         </span>
       </div>
 
