@@ -18,13 +18,10 @@ const Startlist = () => {
       .catch((error) => setError(error.message));
   };
 
-  const handleSort = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleSort = (event: React.ChangeEvent<HTMLSelectElement>) =>
     setSort(event.target.value);
-  };
 
-  const handleOrder = () => {
-    setOrder(order === "asc" ? "desc" : "asc");
-  };
+  const handleOrder = () => setOrder(order === "asc" ? "desc" : "asc");
 
   const clearSort = () => {
     setSort("");
@@ -34,6 +31,16 @@ const Startlist = () => {
   useEffect(() => {
     loadEntries();
   }, []);
+
+  const position = order === "asc" ? -1 : 1;
+
+  const sortedEntries = !sort.length
+    ? entries
+    : entries
+        .slice()
+        .sort((a, b) =>
+          a[sort] === b[sort] ? 0 : a[sort] < b[sort] ? position : position * -1
+        );
 
   if (!entries) return <h2>No entries</h2>;
   if (error) return <h2>{error}</h2>;
@@ -49,7 +56,7 @@ const Startlist = () => {
         clearSort={clearSort}
       />
       <div>
-        {entries.map((entry, i) => (
+        {sortedEntries.map((entry, i) => (
           <div key={i}>
             <Entry entry={entry} />
           </div>
