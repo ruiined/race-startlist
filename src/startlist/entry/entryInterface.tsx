@@ -12,8 +12,6 @@ export declare interface EntryInterface {
     ticketTitle: string;
     ticketPrice: {
       value: number;
-      fee: number;
-      currencyCode: string;
     };
   };
 }

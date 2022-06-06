@@ -47,8 +47,8 @@ h2 {
 
 #min-entry {
   display: flex;
-  justify-content: space-between;
   text-transform: capitalize;
+  gap: 20px;
 }
 
 #detailed-entry {

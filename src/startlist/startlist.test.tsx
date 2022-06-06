@@ -26,7 +26,7 @@ describe("Startlist", () => {
       expect(header).toBeInTheDocument();
     });
     await waitFor(() => {
-      const entry = screen.getByText(/asfdg asfdg/i);
+      const entry = screen.getByText(/asfdg/i);
       expect(entry).toBeInTheDocument();
     });
   });

@@ -12,7 +12,7 @@ export const Entry = ({ entry }: EntryInterface) => {
   return (
     <div>
       <div id="min-entry" onClick={handleClick}>
-        <span>{entry.status}</span>
+        <span>{entry.status === "CONFIRMED" ? "✅" : "⌛"}</span>
         <span>
           {entry.firstName} {entry.lastName}
         </span>
