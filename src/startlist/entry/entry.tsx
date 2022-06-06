@@ -6,12 +6,12 @@ import { currency } from "../../lib/currency";
 export const Entry = ({ entry }: EntryInterface) => {
   const [fullView, setFullView] = useState<boolean>(false);
 
-  const handleClick = () => {
+  const handleView = () => {
     fullView ? setFullView(false) : setFullView(true);
   };
   return (
     <div>
-      <div id="min-entry" onClick={handleClick}>
+      <div id="min-entry" onClick={handleView}>
         <span>{entry.status === "CONFIRMED" ? "✅" : "⌛"}</span>
         <span>
           {entry.firstName} {entry.lastName}
