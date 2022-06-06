@@ -41,7 +41,7 @@ I have learnt a lot through this tech test and, inevitably, made a lot of mistak
 - Using ids rather than titles for filtering
 - Search function
 - Organiser authorization for sensitive data security
-- - User-friendly interface
+- User-friendly interface
 
 ## Instructions
 
