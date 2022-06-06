@@ -41,7 +41,6 @@ h2 {
   transition: 0.3s;
 }
 
-#detailed-entry:hover,
 #min-entry:hover {
   background-color: rgb(240, 240, 240);
 }
@@ -50,6 +49,11 @@ h2 {
   display: flex;
   justify-content: space-between;
   text-transform: capitalize;
+}
+
+#detailed-entry {
+  margin-top: -20px;
+  background-color: rgb(253, 253, 253);
 }
 
 .email {

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import moment from "moment";
 import { EntryInterface } from "./entryInterface";
 
 export const Entry = ({ entry }: EntryInterface) => {
@@ -29,9 +30,9 @@ export const Entry = ({ entry }: EntryInterface) => {
           <p>
             <i>{entry.raceTitle}</i>
           </p>
-          <p>{entry.raceStartDate}</p>
+          <p>{moment(entry.raceStartDate).format("MMMM Do YYYY h:mm a")}</p>
           <p>Organised by {entry.organiserTitle}</p>
-          <p>Booked on {entry.bookingDate}</p>
+          <p>Booked on {moment(entry.bookingDate).format("MMMM Do YYYY")}</p>
         </div>
       )}
     </div>
