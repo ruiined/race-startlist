@@ -18,6 +18,22 @@ header a {
   text-decoration: underline rgb(230, 230, 230) 8px;
 }
 
+footer {
+  border-top: rgb(230, 230, 230) 1px solid;
+  text-align: right;
+  padding: 20px 15px;
+  margin-top: 60px;
+}
+
+p {
+  margin: 0;
+}
+
+b {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 17px;
+}
+
 a {
   text-decoration: none;
   color: rgb(48, 48, 48);
@@ -38,6 +54,33 @@ h3 {
   text-align: center;
   font-size: 24px;
   margin-top: -20px;
+}
+
+button {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(220, 220, 220);
+  padding: 7px;
+  margin: 5px 10px 5px 0;
+  transition: 0.3s;
+  color: rgb(75, 75, 75);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(241, 241, 241);
+}
+
+select {
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 4px;
+  color: rgb(75, 75, 75);
+  border-radius: 4px;
+  margin: 5px 10px 0 0;
+  cursor: pointer;
+  width: 150px;
 }
 
 #detailed-entry,
@@ -68,6 +111,22 @@ h3 {
   color: rgb(151, 151, 151);
 }
 
-p {
-  margin: 0;
+#filtering,
+#sorting {
+  background-color: rgb(251, 251, 251);
+  border-radius: 5px;
+  padding: 10px 40px;
+}
+
+#sorting {
+  float: right;
+  text-align: right;
+}
+
+#stats {
+  background-color: rgb(251, 251, 251);
+  border-radius: 5px;
+  margin: 15px 0 35px 0;
+  padding: 20px 40px;
+  color: rgb(61, 61, 61);
 }

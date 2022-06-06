@@ -54,7 +54,9 @@ export const Filtering = ({
           </option>
         ))}
       </select>
-      <button onClick={clearFilters}>Reset filters</button>
+      <button aria-label="reset filters" onClick={clearFilters}>
+        Reset
+      </button>
     </div>
   );
 };

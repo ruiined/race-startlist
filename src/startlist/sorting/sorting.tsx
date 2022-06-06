@@ -30,14 +30,10 @@ export const Sorting = ({
         <option value="ticketPrice">Ticket Price</option>
         <option value="bookingDate">Booking Date</option>
       </select>
-      <p>
         <button onClick={handleOrder}>{order === "asc" ? "⬆️" : "⬇️"}</button>
-      </p>
-      <p>
         <button onClick={clearSort} aria-label="Reset sorting">
           Reset
         </button>
-      </p>
     </div>
   );
 };

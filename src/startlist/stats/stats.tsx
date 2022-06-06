@@ -15,7 +15,7 @@ export const Stats = ({ entries }: StatsInterface) => {
   const averageRevenue = currency.format(calculateRevenue() / ticketCount);
 
   return (
-    <div>
+    <div id="stats">
       <p>
         Total ticket revenue: <b>{ticketRevenue}</b>
       </p>
