@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 30px;
-  color: rgb(66, 66, 66);
+  color: rgb(41, 41, 41);
 }
 
 header {
@@ -21,10 +21,11 @@ header a {
 a {
   text-decoration: none;
   color: rgb(48, 48, 48);
+  transition: 0.3s;
 }
 
 a:hover {
-  color: rgb(85, 85, 85);
+  color: rgb(88, 88, 88);
 }
 
 h2 {
@@ -37,6 +38,7 @@ h2 {
   background-color: rgb(251, 251, 251);
   padding: 10px 40px;
   margin: 20px 0;
+  transition: 0.3s;
 }
 
 #detailed-entry:hover,

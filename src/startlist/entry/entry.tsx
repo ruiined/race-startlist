@@ -9,39 +9,29 @@ export const Entry = ({ entry }: EntryInterface) => {
   };
   return (
     <div onClick={handleClick}>
-      {fullView ? (
+      <div id="min-entry">
+        <span>{entry.status}</span>
+        <span>
+          {entry.firstName} {entry.lastName}
+        </span>
+        <span className="email">{entry.emailAddress}</span>
+        <span>
+          {entry.ticketTitle} ({entry.ticketPrice.value}
+          {entry.ticketPrice.currencyCode})
+        </span>
+      </div>
+
+      {fullView && (
         <div id="detailed-entry">
-          <p>Status: {entry.status}</p>
           <p>
-            {entry.firstName} {entry.lastName}
+            <b>{entry.eventTitle}</b>
           </p>
-          <p>{entry.emailAddress}</p>
-          <p>{entry.eventTitle}</p>
+          <p>
+            <i>{entry.raceTitle}</i>
+          </p>
           <p>{entry.raceStartDate}</p>
-          <p>{entry.raceTitle}</p>
           <p>Organised by {entry.organiserTitle}</p>
-          <p>Booking details:</p>
           <p>Booked on {entry.bookingDate}</p>
-          <p>Ticket:</p>
-          <p>{entry.ticketTitle}</p>
-          <p>
-            {entry.ticketPrice.value} {entry.ticketPrice.currencyCode}
-          </p>
-          <p>
-            {entry.ticketPrice.fee} {entry.ticketPrice.currencyCode} fee
-          </p>
-        </div>
-      ) : (
-        <div id="min-entry">
-          <span>{entry.status}</span>
-          <span>
-            {entry.firstName} {entry.lastName}
-          </span>
-          <span className="email">{entry.emailAddress}</span>
-          <span>
-            {entry.ticketTitle} ({entry.ticketPrice.value}+
-            {entry.ticketPrice.fee} {entry.ticketPrice.currencyCode})
-          </span>
         </div>
       )}
     </div>
