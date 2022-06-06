@@ -90,18 +90,21 @@ const Startlist = () => {
         clearSort={clearSort}
       />
       <div id="filtering">
-      <button aria-label="print" onClick={handlePrint}>🖨️</button>
-      <Filtering
-        entries={entries}
-        filters={filters}
-        handleFilter={handleFilter}
-        clearFilters={clearFilters}
-      /></div>
+        <button aria-label="print" onClick={handlePrint}>
+          🖨️
+        </button>
+        <Filtering
+          entries={entries}
+          filters={filters}
+          handleFilter={handleFilter}
+          clearFilters={clearFilters}
+        />
+      </div>
       <Stats entries={filteredAndSorted} />
       <div>
         {filteredAndSorted.map((entry, i) => (
           <div key={i}>
-            <Entry entry={entry} />
+            <Entry entry={entry} filters={filters} />
           </div>
         ))}
       </div>

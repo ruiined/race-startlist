@@ -1,5 +1,9 @@
 export declare interface EntriesInterface {
   entry: EntryInterface;
+  filters: {
+    eventTitle: string;
+    organiserTitle: string;
+  };
 }
 
 export declare interface EntryInterface {
