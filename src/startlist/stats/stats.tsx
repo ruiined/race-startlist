@@ -8,15 +8,22 @@ export const Stats = ({ entries }: StatsInterface) => {
       return acc + event.ticketPrice.value;
     }, 0);
 
+  const ticketCount = entries.length;
+
   const ticketRevenue = currency.format(calculateRevenue());
-  const averageRevenue = currency.format(calculateRevenue() / entries.length);
+
+  const averageRevenue = currency.format(calculateRevenue() / ticketCount);
+
   return (
     <div>
       <p>
         Total ticket revenue: <b>{ticketRevenue}</b>
       </p>
       <p>
-        Average ticket price: <b>{averageRevenue}</b>
+        Tickets sold: <b>{ticketCount}</b>
+      </p>
+      <p>
+        Average ticket price: <b>{String(averageRevenue)}</b>
       </p>
     </div>
   );
