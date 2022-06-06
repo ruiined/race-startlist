@@ -1,6 +1,6 @@
+/* eslint-disable array-callback-return */
 import React from "react";
 import { FilteringInterface } from "./filteringInterface";
-import { EntryInterface } from "../entry/entryInterface";
 
 export const Filtering = ({
   entries,
@@ -8,26 +8,19 @@ export const Filtering = ({
   handleFilter,
   clearFilters,
 }: FilteringInterface) => {
-  const events = [
-    ...new Set(
-      entries.map((entry: EntryInterface) => {
-        if (
-          !filters.organiserTitle ||
-          entry.organiserTitle === filters.organiserTitle
-        )
-          return entry.eventTitle;
-      })
-    ),
-  ].filter((e) => e);
+  const filterOptions = (filterBy: string, filtered: string) =>
+    [
+      ...new Set(
+        entries.map((entry: any) => {
+          if (!filters[filtered] || entry[filtered] === filters[filtered])
+            return entry[filterBy];
+        })
+      ),
+    ].filter((e) => e);
 
-  const organisers = [
-    ...new Set(
-      entries.map((entry: EntryInterface) => {
-        if (!filters.eventTitle || entry.eventTitle === filters.eventTitle)
-          return entry.organiserTitle;
-      })
-    ),
-  ].filter((e) => e);
+  const organisers = filterOptions("organiserTitle", "eventTitle");
+
+  const events = filterOptions("eventTitle", "organiserTitle");
 
   return (
     <div id="filtering">
