@@ -6,11 +6,18 @@ export const Sorting = ({
   handleSort,
   handleOrder,
   order,
-  clearSort
+  clearSort,
 }: SortingInterface) => {
-  return <div id="sorting">
-      <select defaultValue={sort || "all"} onChange={handleSort} name="sort" id="sort">
-        <option value="all" disabled>Sort by</option>
+  return (
+    <div id="sorting">
+      <select
+        defaultValue={sort || "all"}
+        aria-label="Sort by"
+        onChange={handleSort}
+      >
+        <option value="all" disabled>
+          Sort by
+        </option>
         <option value="eventTitle">Event</option>
         <option value="raceTitle">Event Type</option>
         <option value="raceStartDate">Event Start Time</option>
@@ -27,8 +34,10 @@ export const Sorting = ({
         <button onClick={handleOrder}>{order === "asc" ? "⬆️" : "⬇️"}</button>
       </p>
       <p>
-        <button onClick={clearSort}>Reset sorting</button>
+        <button onClick={clearSort} aria-label="Reset sorting">
+          Reset
+        </button>
       </p>
-      </div>;
-}
-  
+    </div>
+  );
+};

@@ -35,6 +35,10 @@ const Startlist = () => {
     setOrder("asc");
   };
 
+  const clearFilters = () => {
+    setFilters({});
+  };
+
   useEffect(() => {
     loadEntries();
   }, []);
@@ -59,26 +63,43 @@ const Startlist = () => {
           a[sort] === b[sort] ? 0 : a[sort] < b[sort] ? position : position * -1
         );
 
-  const filteredEntries = !filters.organiserTitle
-    ? entries
-    : entries
-        .slice()
-        .filter((entry) => entry.organiserTitle === filters.organiserTitle);
+  const entryValue = (entry: any) =>
+    sort === "ticketPrice" ? entry[sort]["value"] : entry[sort];
 
   const organisers = [...new Set(entries.map((entry) => entry.organiserTitle))];
 
+  const filterEntries = !filters
+    ? entries
+    : [...entries].filter((entry) =>
+        Object.keys(filters).every((key) => entry[key] === filters[key])
+      );
+
+  const sortEntries = (entryData: Array<any>) =>
+    entryData.sort((a, b) =>
+      entryValue(a) === entryValue(b)
+        ? 0
+        : entryValue(a) < entryValue(b)
+        ? position
+        : position * -1
+    );
+
   const events = filters.organiserTitle
-    ? [
+    ? [...new Set(entries.map((entry) => entry.eventTitle))]
+    : [
         ...new Set(
+          // eslint-disable-next-line array-callback-return
           entries.map((entry) => {
             if (entry.organiserTitle === filters.organiserTitle)
               return entry.eventTitle;
           })
         ),
-      ]
-    : [...new Set(entries.map((entry) => entry.eventTitle))];
+      ];
+
+  const filteredAndSorted =
+    !filters && !sort ? entries : sortEntries(filterEntries);
 
   if (!entries) return <h2>No entries</h2>;
+
   if (error) return <h2>{error}</h2>;
 
   return (
@@ -91,22 +112,37 @@ const Startlist = () => {
         order={order}
         clearSort={clearSort}
       />
-      <select onChange={handleOrgFilter} name="orgFilter" id="orgFilter">
+      <select
+        value={filters.organiserTitle || "all"}
+        onChange={handleOrgFilter}
+        aria-label="filter organisations"
+      >
+        <option value="all" disabled>
+          Organisers
+        </option>
         {organisers.map((org, i) => (
           <option value={org} key={i}>
             {org}
           </option>
         ))}
       </select>
-      <select onChange={handleEvFilter} name="evFilter" id="evFilter">
+      <select
+        value={filters.eventTitle || "all"}
+        onChange={handleEvFilter}
+        aria-label="filter events"
+      >
+        <option value="all" disabled>
+          Events
+        </option>
         {events.map((ev, i) => (
           <option value={ev} key={i}>
             {ev}
           </option>
         ))}
       </select>
+      <button onClick={clearFilters}>Reset filters</button>
       <div>
-        {sortedEntries.map((entry, i) => (
+        {filteredAndSorted.map((entry, i) => (
           <div key={i}>
             <Entry entry={entry} />
           </div>
