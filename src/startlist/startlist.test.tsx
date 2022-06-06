@@ -90,10 +90,6 @@ describe("Startlist", () => {
       expect(status).toBeInTheDocument();
     });
     await waitFor(() => {
-      const raceStart = screen.getByText("12/09/2022 10:00");
-      expect(raceStart).toBeInTheDocument();
-    });
-    await waitFor(() => {
       const ticketPrice = screen.getByText(/£4,300.00/i);
       expect(ticketPrice).toBeInTheDocument();
     });
