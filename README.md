@@ -24,9 +24,9 @@ My next step was getting API data to display on the page. From that point on I k
 
 I am new to Typescript so it was a great opportunity to learn more about it, even though it did slow me down. Creating type interfaces was something I've never done before.
 
-React to pdf was a new experience as well but it was a breeze thanks to ReactToPrint package.
+Printing in react was a new experience as well but it was a breeze thanks to ReactToPrint package.
 
-Overall, this was a fun experience and I wish I didn't have the time limit as it went by too fast. I feel like I could have done a much better job at refactoring and keeping it DRY. I might have decided to implement too much of the functionality that made me rush through it. However, I set a goal for myself and I'm happy I more or less reached it within the time given.
+Overall, this was a fun experience and I wish I didn't have the time limit as it went by too fast. I feel like I could have done a much better job at refactoring and keeping it DRY. I might have decided to implement too much of the functionality that made me rush through it. However, I set a goal for myself and I'm happy I have more or less reached it within the time given.
 
 ### Testing
 
@@ -40,19 +40,21 @@ I have learnt a lot through this tech test and, inevitably, made a lot of mistak
 - Cypress e-to-e testing
 - Using ids rather than titles for filtering
 - Search function
-- User-friendly interfaces
 - Organiser authorization for sensitive data security
+- - User-friendly interface
 
-## Installation
+## Instructions
+
+### Installation
 
 1. Clone the repository & `cd` into it
 2. `npm install` to install dependencies
 3. `npm start` to run a development server
 4. Visit `localhost:3000` & you are good to go!
 
-## Testing
+### Testing
 
-- `npm test` to test the app
+- `npm test` to test the application
 - `npm lint` to run ESLint
 
 ## Technologies
