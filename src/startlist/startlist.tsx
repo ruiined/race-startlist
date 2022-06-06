@@ -3,6 +3,7 @@ import axios from "axios";
 import { Entry } from "./entry/entry";
 import { Sorting } from "./sorting/sorting";
 import { Filtering } from "./filtering/filtering";
+import { Stats } from "./stats/stats";
 
 const Startlist = () => {
   const [entries, setEntries] = useState<any[]>([]);
@@ -86,6 +87,7 @@ const Startlist = () => {
         handleFilter={handleFilter}
         clearFilters={clearFilters}
       />
+      <Stats entries={filteredAndSorted} />
       <div>
         {filteredAndSorted.map((entry, i) => (
           <div key={i}>
