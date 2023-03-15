@@ -2,6 +2,8 @@
 
 [![Tests](https://github.com/ruiined/race-startlist/actions/workflows/testing.yml/badge.svg)](https://github.com/ruiined/race-startlist/actions/workflows/testing.yml)
 
+_[My Approach](#my-approach) | [Instructions](#instructions) | [Technologies](#technologies) | [Features](#features) | [Screenshots](#screenshots)_
+
 Dashboard for event organisers to view race startlist entries and ticket sale revenue.
 
 ## My Approach
@@ -13,8 +15,6 @@ I started the exercise with a bit of planning on Miro. Considering that there wa
 My biggest challenge was keeping it small scale and simple. I tried my best to not overthink the problem.
 
 Given that the exercise revolved around the data given, the main functionality to implement had to do with data manipulation, e.g. sorting & filtering. Of course, ticket revenue was in my plans as well. As for an additional feature I could implement, I decided on PDF printing as something essential for an event organiser.
-
-![Mockup](https://github.com/ruiined/race-startlist/blob/main/screens/race-startlist-planning.jpg)
 
 ### Coding
 
@@ -94,6 +94,6 @@ I have learnt a lot through this tech test and, inevitably, made a lot of mistak
   - Total tickets
   - Average ticket price per entry
 
-## Screenshot
+## Screenshots
 
 ![Screenshot](https://github.com/ruiined/race-startlist/blob/main/screens/race-startlist-screenshot.jpg)
