@@ -2,7 +2,7 @@
 
 [![Tests](https://github.com/ruiined/race-startlist/actions/workflows/testing.yml/badge.svg)](https://github.com/ruiined/race-startlist/actions/workflows/testing.yml)
 
-_[My Approach](#my-approach) | [Instructions](#instructions) | [Technologies](#technologies) | [Features](#features) | [Screenshots](#screenshots)_
+_[My Approach](#my-approach) | [Instructions](#instructions) | [Technologies](#technologies) | [Features](#features) | [Preview](#preview)_
 
 Dashboard for event organisers to view race startlist entries and ticket sale revenue.
 
@@ -94,6 +94,7 @@ I have learnt a lot through this tech test and, inevitably, made a lot of mistak
   - Total tickets
   - Average ticket price per entry
 
-## Screenshots
+## Preview
 
-![Screenshot](https://github.com/ruiined/race-startlist/blob/main/screens/race-startlist-screenshot.jpg)
+![Race_Startlist](https://user-images.githubusercontent.com/72412305/225421319-f74f00d0-3c9c-47a2-bb32-c1de8df069b8.gif)
+
